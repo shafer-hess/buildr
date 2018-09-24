@@ -3,3 +3,6 @@ D:\Downloads\pscp.exe -i C:\Users\Derek\Documents\buildr.ppk C:\Users\Derek\Docu
 sudo yum install mysql
 sudo yum install php
 sudo yum install php-mysqli
+
+Note: When adding EC2 instance to security group of RDS, use EC2's private IP address (this can be found by typing the command 'ip address'
+and looking for the private IP address listed on the dashboard details, also append the /20 for the CIDR notation that's listed in the terminal)
