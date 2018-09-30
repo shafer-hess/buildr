@@ -146,6 +146,7 @@ public class SaveAndLoad : MonoBehaviour {
         }
         
         string path = Application.persistentDataPath;
+        Debug.Log(Application.persistentDataPath);
         string[] fileArray = Directory.GetFiles(path, "*.json");
 
         foreach(string fileName in fileArray)
