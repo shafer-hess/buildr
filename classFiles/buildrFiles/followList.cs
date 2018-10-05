@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace buildrFiles
 {
@@ -12,6 +13,11 @@ namespace buildrFiles
         {
             count = 0;
             users = new List<User>();
+        }
+
+        public List<User> getUserList()
+        {
+            return users;
         }
         
         public void addFollow(User usr)
@@ -29,20 +35,13 @@ namespace buildrFiles
 
         public void removeFollow(User usr)
         {
-            if (users.Count != 0)
+            if (!users.Remove(usr))
             {
-                foreach (var u in users)
-                {
-                    if (usr.getUsername() == u.getUsername())
-                    {
-                        users.Remove(u);
-                        count--;
-                    }
-                }   
+                Console.WriteLine("You do not follow: " + usr.getUsername()); 
             }
             else
             {
-                Console.WriteLine("You do not follow: " + usr.getUsername());
+                count--;
             }
         }
 
@@ -82,7 +81,6 @@ namespace buildrFiles
         public int getFollows()
         {
             return count;
-        }
-        
+        }  
     }
 }
