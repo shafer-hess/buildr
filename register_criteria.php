@@ -5,10 +5,21 @@
 	$username="user";
 	//$password="Pass1001";
 	$password="pass";
+	$email="joe@moe.com";
+	//$email="joemoe";
+	
+	//check if email is valid
+	if(preg_match('/@/', $email)){
+		echo "Valid email.\n";
+	} else {
+		echo "Please register with a valid email.\n";
+		exit();
+	}
 	
 	//check username length - required at least 5 chars
 	if(strlen($username) < 5){
 		echo "Invalid username length. Username must be at least 5 characters long.\n";
+		exit();
 		//return false;
 	} else { 
 		echo "Valid username.\n";
