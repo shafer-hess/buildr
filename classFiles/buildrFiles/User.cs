@@ -7,11 +7,11 @@ using System.Collections.Generic;
             Update followList to new data structure once class is created
          */
 
-namespace buildrFiles
-{
-    class User
-    {
-        int id;
+namespace buildrFiles {
+
+    class User {
+    
+        int id; //Generate ID from database
         string username;
         string nameFirst;
         string nameLast;
@@ -22,8 +22,7 @@ namespace buildrFiles
 
         public User(int uid, string first, string last, string user, string email, string _password) {
             id = uid;
-            nameFirst = first;
-            nameLast = last;
+            setName(first, last);
             username = user;
             setEmail(email);
             //temp for testing purposed, final will include hashed password checking through database
@@ -40,6 +39,10 @@ namespace buildrFiles
             return nameLast;
         }
 
+        public string getUsername() {
+            return username;
+        }
+
         public void setProfilePic(string path) {
             profilePic = path;
         }
@@ -49,6 +52,10 @@ namespace buildrFiles
             nameLast = last;
         }
 
+        public string getEmail() {
+            return userEmail;
+        }
+        
         public void setEmail(string email) {
             if(email.Contains("@")) {
                 userEmail = email;
@@ -64,11 +71,20 @@ namespace buildrFiles
         public void follow(string username) {
             if(following.Contains(username) == false) {
                 following.Add(username);
+                Console.WriteLine("Followed: " + username);
             }
 
             else {
                 //change to visual error in unity when UI is ready
-                Console.WriteLine("You already follow this User");
+                Console.WriteLine("You already follow this User: " + username);
+            }
+        }
+
+        public void printFollows() {
+             Console.WriteLine("Following:");
+            foreach (var username in following)
+            {
+               Console.WriteLine(username); 
             }
         }
     }
