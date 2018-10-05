@@ -7,7 +7,7 @@ using buildrFiles;
 
 namespace UnitTests
 {
-    public class UnitTest1
+    public class UserUnitTest
     {
         
         User u1 = new User(1, "Shafer", "Hess", "shafer_", "shafer.hess01@gmail.com", "testPass");

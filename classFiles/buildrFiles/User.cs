@@ -31,6 +31,11 @@ namespace buildrFiles {
             following = new List<string>();
         }
 
+        public int getID()
+        {
+            return id;
+        }
+        
         public string getFirstName() {
             return nameFirst;
         }
