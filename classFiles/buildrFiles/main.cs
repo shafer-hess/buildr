@@ -2,8 +2,9 @@ using System;
 
 namespace buildrFiles {
 
-    public class UserTests {
-    
+    public class Tests
+    {
+
         static void Main(string[] args) {
        
             User u1 = new User(1, "Shafer", "Hess", "shafer_", "shafer.hess01@gmail.com", "testPass");
@@ -32,4 +33,5 @@ namespace buildrFiles {
             Console.WriteLine("========== End Test Follows ==========");
         }
     }
+    
 }

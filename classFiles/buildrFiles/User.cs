@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace buildrFiles {
 
-    class User {
+    public class User {
     
         int id; //Generate ID from database
         string username;
@@ -78,6 +78,11 @@ namespace buildrFiles {
                 //change to visual error in unity when UI is ready
                 Console.WriteLine("You already follow this User: " + username);
             }
+        }
+
+        public List<string> getFollowList()
+        {
+            return following;
         }
 
         public void printFollows() {
