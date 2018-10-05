@@ -1,0 +1,11 @@
+/Users/shaferhess1/buildr/classFiles/buildrFiles/bin/Debug/netcoreapp2.1/buildrFiles.deps.json
+/Users/shaferhess1/buildr/classFiles/buildrFiles/bin/Debug/netcoreapp2.1/buildrFiles.runtimeconfig.json
+/Users/shaferhess1/buildr/classFiles/buildrFiles/bin/Debug/netcoreapp2.1/buildrFiles.runtimeconfig.dev.json
+/Users/shaferhess1/buildr/classFiles/buildrFiles/bin/Debug/netcoreapp2.1/buildrFiles.dll
+/Users/shaferhess1/buildr/classFiles/buildrFiles/bin/Debug/netcoreapp2.1/buildrFiles.pdb
+/Users/shaferhess1/buildr/classFiles/buildrFiles/obj/Debug/netcoreapp2.1/buildrFiles.csprojAssemblyReference.cache
+/Users/shaferhess1/buildr/classFiles/buildrFiles/obj/Debug/netcoreapp2.1/buildrFiles.csproj.CoreCompileInputs.cache
+/Users/shaferhess1/buildr/classFiles/buildrFiles/obj/Debug/netcoreapp2.1/buildrFiles.AssemblyInfoInputs.cache
+/Users/shaferhess1/buildr/classFiles/buildrFiles/obj/Debug/netcoreapp2.1/buildrFiles.AssemblyInfo.cs
+/Users/shaferhess1/buildr/classFiles/buildrFiles/obj/Debug/netcoreapp2.1/buildrFiles.dll
+/Users/shaferhess1/buildr/classFiles/buildrFiles/obj/Debug/netcoreapp2.1/buildrFiles.pdb

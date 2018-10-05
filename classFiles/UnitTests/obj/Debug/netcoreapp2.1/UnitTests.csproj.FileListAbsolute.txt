@@ -1,0 +1,17 @@
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/UnitTests.deps.json
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/UnitTests.runtimeconfig.json
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/UnitTests.runtimeconfig.dev.json
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/UnitTests.dll
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/UnitTests.pdb
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/buildrFiles.dll
+/Users/shaferhess1/buildr/classFiles/UnitTests/bin/Debug/netcoreapp2.1/buildrFiles.pdb
+/Users/shaferhess1/buildr/classFiles/UnitTests/obj/Debug/netcoreapp2.1/UnitTests.csprojAssemblyReference.cache
+/Users/shaferhess1/buildr/classFiles/UnitTests/obj/Debug/netcoreapp2.1/UnitTests.csproj.CoreCompileInputs.cache
+/Users/shaferhess1/buildr/classFiles/UnitTests/obj/Debug/netcoreapp2.1/UnitTests.AssemblyInfoInputs.cache
+/Users/shaferhess1/buildr/classFiles/UnitTests/obj/Debug/netcoreapp2.1/UnitTests.AssemblyInfo.cs
+/Users/shaferhess1/buildr/classFiles/UnitTests/obj/Debug/netcoreapp2.1/UnitTests.csproj.CopyComplete
+/Users/shaferhess1/buildr/classFiles/UnitTests/obj/Debug/netcoreapp2.1/UnitTests.dll
+/Users/shaferhess1/buildr/classFiles/UnitTests/obj/Debug/netcoreapp2.1/UnitTests.pdb
