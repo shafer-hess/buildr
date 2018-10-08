@@ -19,6 +19,22 @@ public class BlockPlacing : MonoBehaviour
 
     public Toggle deleteToggle;
 
+
+    enum Action { ADD = 0, DELETE = 1, PAINT = 3 };
+    struct Operation
+    {
+        GameObject o;
+        Action action;
+        public Operation(GameObject o, Action action)
+        {
+            this.o = o;
+            this.action = action;
+        }
+    }
+
+    Stack<Operation> undoStack;
+    Stack<Operation> redoStack;
+
     // Use this for initialization
     void Start()
     {
@@ -30,7 +46,6 @@ public class BlockPlacing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //stop building when paused
         if (paused)
         {
@@ -54,6 +69,7 @@ public class BlockPlacing : MonoBehaviour
                     //deleting
                     if (deleteToggle.isOn)
                     {
+                        //undoStack.Push(new Operation(Instantiate(hit1.collider.gameObject), Action.DELETE));
                         Destroy(hit1.collider.gameObject);
                         return;
                     }
@@ -82,6 +98,7 @@ public class BlockPlacing : MonoBehaviour
 
                     //placing
                     GameObject b = Instantiate(currentBlock, theBuild.transform, true);
+                    //undoStack.Push(new Operation(b, Action.ADD));
                     Destroy(b.GetComponent<Rigidbody>());
                     b.layer = LayerMask.NameToLayer("Default");
                 }
@@ -193,6 +210,26 @@ public class BlockPlacing : MonoBehaviour
                     r.material = newMaterial;
                 }
             }
+        }
+    }
+
+    public void rotade()
+    {
+        currentBlock.transform.Rotate(Vector3.up, 90f, Space.World);
+    }
+
+    public void scaleUp()
+    {
+        currentBlock.transform.localScale += Vector3.up;
+    }
+
+    public void scaleDown()
+    {
+        Vector3 afterScaling;
+        afterScaling = currentBlock.transform.localScale - Vector3.up;
+        if (afterScaling.x != 0 && afterScaling.y != 0 && afterScaling.z != 0)
+        {
+            currentBlock.transform.localScale = afterScaling;
         }
     }
 }
