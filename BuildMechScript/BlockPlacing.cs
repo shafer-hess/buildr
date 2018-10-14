@@ -23,12 +23,28 @@ public class BlockPlacing : MonoBehaviour
     enum Action { ADD = 0, DELETE = 1, PAINT = 3 };
     struct Operation
     {
-        GameObject o;
-        Action action;
-        public Operation(GameObject o, Action action)
+        public GameObject o;
+        public string name;
+        public Transform t;
+        public Action action;
+        public Operation(string name, Transform t)
+        {
+            o = null;
+            int i = name.IndexOf('(');
+            if (i > 0)
+            {
+                name = name.Remove(i);
+            }
+            this.name = name;
+            this.t = t;
+            action = Action.DELETE;
+        }
+        public Operation(GameObject o)
         {
             this.o = o;
-            this.action = action;
+            this.name = null;
+            this.t = null;
+            action = Action.ADD;
         }
     }
 
@@ -39,8 +55,9 @@ public class BlockPlacing : MonoBehaviour
     void Start()
     {
         ChooseBlock("Cube0");
-        //theBuild = GameObject.Find("TheShip");
         normalMaterial = currentBlock.GetComponent<Renderer>().material;
+        undoStack = new Stack<Operation>();
+        redoStack = new Stack<Operation>();
     }
 
     // Update is called once per frame
@@ -69,7 +86,8 @@ public class BlockPlacing : MonoBehaviour
                     //deleting
                     if (deleteToggle.isOn)
                     {
-                        //undoStack.Push(new Operation(Instantiate(hit1.collider.gameObject), Action.DELETE));
+                        undoStack.Push(new Operation(hit1.collider.gameObject.name, hit1.collider.gameObject.transform));
+                        redoStack.Clear();
                         Destroy(hit1.collider.gameObject);
                         return;
                     }
@@ -98,16 +116,58 @@ public class BlockPlacing : MonoBehaviour
 
                     //placing
                     GameObject b = Instantiate(currentBlock, theBuild.transform, true);
-                    //undoStack.Push(new Operation(b, Action.ADD));
+                    undoStack.Push(new Operation(b));
+                    redoStack.Clear();
                     Destroy(b.GetComponent<Rigidbody>());
                     b.layer = LayerMask.NameToLayer("Default");
                 }
             }
         }
+
+        //mouse input for test only
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
         Debug.DrawRay(ray.origin, ray.direction * 1011, Color.green);
         RaycastHit hit;
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit))
+        {
+            //deleting
+            if (deleteToggle.isOn)
+            {
+                undoStack.Push(new Operation(hit.collider.gameObject.name, hit.collider.gameObject.transform));
+                redoStack.Clear();
+                Destroy(hit.collider.gameObject);
+                return;
+            }
 
+            //Check if the cube allows palcing on the x and z axis
+            if (hit.normal != Vector3.up && currentBlock.GetComponent<CheckOverlapping>().fixUp)
+            {
+                return;
+            }
+            float distance = Vector3.Dot(currentBlock.GetComponent<BoxCollider>().bounds.size, hit.normal);
+            distance = Mathf.Abs(distance);
+            //Debug.Log(">>>>>size" + currentBlock.GetComponent<BoxCollider>().bounds.size);
+            //Debug.Log(">>>>>distance: " + distance);
+            Vector3 pos = hit.point + distance / 2 * hit.normal;
+            pos.x = Mathf.Round(pos.x / 2.5f) * 2.5f;
+            pos.y = Mathf.Round(pos.y / 2.5f) * 2.5f;
+            pos.z = Mathf.Round(pos.z / 2.5f) * 2.5f;
+            currentBlock.transform.position = pos;
+
+            //check if placable
+            //Debug.Log("hit" + currentBlock.GetComponent<CheckOverlapping>().overlapped);
+            if (currentBlock.GetComponent<CheckOverlapping>().overlapped)
+            {
+                return;
+            }
+
+            //placing
+            GameObject b = Instantiate(currentBlock, theBuild.transform, true);
+            Destroy(b.GetComponent<Rigidbody>());
+            b.layer = LayerMask.NameToLayer("Default");
+            undoStack.Push(new Operation(b));
+            redoStack.Clear();
+        }
 
 
         //rotating
@@ -230,6 +290,52 @@ public class BlockPlacing : MonoBehaviour
         if (afterScaling.x != 0 && afterScaling.y != 0 && afterScaling.z != 0)
         {
             currentBlock.transform.localScale = afterScaling;
+        }
+    }
+
+    public void Undo()
+    {
+        if (undoStack.Count == 0)
+        {
+            return;
+        }
+        Operation operation = undoStack.Pop();
+        if (operation.action == Action.ADD)
+        {
+            GameObject temp = operation.o;
+            redoStack.Push(new Operation(temp.name, temp.transform));
+            Destroy(operation.o);
+        }
+        if (operation.action == Action.DELETE)
+        {
+            GameObject temp = (GameObject)Instantiate(Resources.Load(operation.name), theBuild.transform);
+            temp.transform.position = operation.t.position;
+            temp.transform.rotation = operation.t.rotation;
+            temp.transform.localScale = operation.t.localScale;
+            redoStack.Push(new Operation(temp.name, temp.transform));
+        }
+    }
+
+    public void redo()
+    {
+        if (redoStack.Count == 0)
+        {
+            return;
+        }
+        Operation operation = redoStack.Pop();
+        if (operation.action == Action.ADD)
+        {
+            GameObject temp = operation.o;
+            undoStack.Push(new Operation(temp.name, temp.transform));
+            Destroy(temp);
+        }
+        if (operation.action == Action.DELETE)
+        {
+            GameObject temp = (GameObject)Instantiate(Resources.Load(operation.name), theBuild.transform);
+            temp.transform.position = operation.t.position;
+            temp.transform.rotation = operation.t.rotation;
+            temp.transform.localScale = operation.t.localScale;
+            undoStack.Push(new Operation(temp.name, temp.transform));
         }
     }
 }

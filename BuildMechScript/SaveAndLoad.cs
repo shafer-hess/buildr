@@ -31,6 +31,7 @@ public class SaveAndLoad : MonoBehaviour {
     // Use this for initialization
     public GameObject panel;
     public GameObject cubeMenuPanel;
+    public GameObject buildPanel;
     public GameObject OverWriteConfirm;
     public GameObject returnConfirm;
     public GameObject shipScroll;
@@ -57,44 +58,35 @@ public class SaveAndLoad : MonoBehaviour {
         camEditationCon = Camera.main.GetComponent<ViewControl>();
     }
 	
-	// Update is called once per frame
-	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Purse();
-            if (panel.activeInHierarchy)
-            {
-                panel.SetActive(false);
-                LockCamera(false);
-            }
-            else
-            {
-                panel.SetActive(true);
-                LockCamera(true);
-                LoadAndSaveShip();
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Purse();
-            if (cubeMenuPanel.activeInHierarchy)
-            {
-                cubeMenuPanel.SetActive(false);
-                LockCamera(false);
-            }
-            else
-            {
-                cubeMenuPanel.SetActive(true);
-                LockCamera(true);
-            }
-        }
+
+    public void GoToSaveNLoadPanel()
+    {
+        panel.SetActive(true);
+        buildPanel.SetActive(false);
+        LockCamera(true);
+        LoadAndSaveShip();
+    }
+
+    public void GoToCubeMenuPanel()
+    {
+        cubeMenuPanel.SetActive(true);
+        buildPanel.SetActive(false);
+        LockCamera(true);
+    }
+
+    public void BackToBuildPanel()
+    {
+        panel.SetActive(false);
+        cubeMenuPanel.SetActive(false);
+        buildPanel.SetActive(true);
+        LockCamera(false);
     }
 
 
-    private void Purse()
+    private void Purse(bool b)
     {
-        blockPlacing.paused = !blockPlacing.paused;
+        blockPlacing.paused = b;
     }
 
     private string ShipToJson()
