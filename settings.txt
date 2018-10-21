@@ -21,3 +21,8 @@ Linux Server IPv4 Address:	ec2-18-217-185-132.us-east-2.compute.amazonaws.com
         DirectoryIndex index.html index.php
     </IfModule>
 </IfModule>
+
+
+sudo apt-get install php libapache2-mod-php
+sudo a2enmod mpm_prefork && sudo a2enmod php7.0
+sudo service apache2 restart
