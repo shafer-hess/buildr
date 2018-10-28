@@ -32,7 +32,8 @@
 			}
 			$result->close();
 		} else {
-			#printf("User was not found!\n");
+			echo 2; # user was not found
+			$result->close();
 		}
 	}
 	$buildr->close();
