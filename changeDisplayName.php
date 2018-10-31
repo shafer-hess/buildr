@@ -47,7 +47,7 @@
 			}
 			$result->close();
 		} else { # username was not found, abort
-			echo -1;
+			echo 3;
 			$result->close();
 		}
 	} else { # error during query ???, abort

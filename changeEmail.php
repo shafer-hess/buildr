@@ -11,7 +11,15 @@
 		printf("Connect failed: %s\n", $buildr->connect_error);
 		exit();
 	}
-
+	if ($result2 = $buildr->query("SELECT * FROM user WHERE email = \"$newemail\"")) {
+		if ($result2->num_rows > 0) { # new desired email is already taken
+			echo 2; # new desired email is already taken
+			$result2->close();
+			$buildr->close();
+			exit();
+		}
+		$result2->close();
+	}
 	if ($result = $buildr->query("SELECT * FROM user WHERE username = \"$username\"")) {
 		if ($row = $result->fetch_array()) { # username exists, continue
 			$hashed_pass = $row['password'];
@@ -55,7 +63,7 @@
 			}
 			$result->close();
 		} else { # username was not found, abort
-			echo -1;
+			echo 3;
 			$result->close();
 		}
 	} else { # error during query ???, abort

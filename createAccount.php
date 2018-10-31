@@ -16,7 +16,7 @@
 	}
 	if ($result = $buildr->query("SELECT * FROM user WHERE username = \"$username\"")) {
 		if ($result->num_rows > 0) {
-			echo "Username already taken.";
+			echo 2;
 			$result->close();
 			$buildr->close();
 			exit();
@@ -25,7 +25,7 @@
 	}
 	if ($result = $buildr->query("SELECT * FROM user WHERE email = \"$addr\"")) {
 		if ($result->num_rows > 0) {
-			echo "Email already taken.";
+			echo 3;
 			$result->close();
 			$buildr->close();
 			exit();
@@ -36,5 +36,5 @@
 	$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 	$buildr->query("INSERT INTO user (username, password, email, firstName, lastName) VALUES (\"$username\", \"$hashed_pass\", \"$addr\", \"$first\", \"$last\")");
 	$buildr->close();
-	echo "Successfully added.";
+	echo 1;
 ?>
