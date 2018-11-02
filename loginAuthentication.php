@@ -25,7 +25,8 @@
 			#printf("Returned hash: %s\n", $hashed_pass);
 			if (password_verify($password, $hashed_pass)) {
 				#echo "Password is valid!\n";
-				echo 1;
+				$fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
+				echo $fullResult;
 			} else {
 				#echo "Invalid password!\n";
 				echo 0;
