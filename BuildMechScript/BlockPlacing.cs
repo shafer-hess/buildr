@@ -25,7 +25,10 @@ public class BlockPlacing : MonoBehaviour
     {
         public GameObject o;
         public string name;
-        public Transform t;
+        //public Transform t;
+        public Vector3 pos;
+        public Vector3 scl;
+        public Quaternion rot;
         public Action action;
         public Operation(string name, Transform t)
         {
@@ -36,14 +39,20 @@ public class BlockPlacing : MonoBehaviour
                 name = name.Remove(i);
             }
             this.name = name;
-            this.t = t;
+            //this.t = t;
+            pos = t.position;
+            scl = t.localScale;
+            rot = t.rotation;
             action = Action.DELETE;
         }
         public Operation(GameObject o)
         {
             this.o = o;
             this.name = null;
-            this.t = null;
+            //this.t = null;
+            pos = Vector3.zero;
+            scl = Vector3.zero;
+            rot = Quaternion.identity;
             action = Action.ADD;
         }
     }
@@ -125,10 +134,10 @@ public class BlockPlacing : MonoBehaviour
         }
 
         //mouse input for test only
-        /*Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
         Debug.DrawRay(ray.origin, ray.direction * 1011, Color.green);
         RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit))
+        if (Input.GetKeyDown(KeyCode.A) && Physics.Raycast(ray, out hit))
         {
             //deleting
             if (deleteToggle.isOn)
@@ -222,7 +231,7 @@ public class BlockPlacing : MonoBehaviour
                 currentBlock.transform.localScale = afterScaling;
             }
         }
-        */
+        
 
         if (currentBlock)
         {
@@ -301,7 +310,7 @@ public class BlockPlacing : MonoBehaviour
             return;
         }
         Operation operation = undoStack.Pop();
-        if (operation.action == Action.ADD)
+        if (operation.action == Action.ADD && operation.o)
         {
             GameObject temp = operation.o;
             redoStack.Push(new Operation(temp.name, temp.transform));
@@ -310,10 +319,10 @@ public class BlockPlacing : MonoBehaviour
         if (operation.action == Action.DELETE)
         {
             GameObject temp = (GameObject)Instantiate(Resources.Load(operation.name), theBuild.transform);
-            temp.transform.position = operation.t.position;
-            temp.transform.rotation = operation.t.rotation;
-            temp.transform.localScale = operation.t.localScale;
-            redoStack.Push(new Operation(temp.name, temp.transform));
+            temp.transform.position = operation.pos;
+            temp.transform.rotation = operation.rot;
+            temp.transform.localScale = operation.scl;
+            redoStack.Push(new Operation(temp));
         }
     }
 
@@ -324,7 +333,7 @@ public class BlockPlacing : MonoBehaviour
             return;
         }
         Operation operation = redoStack.Pop();
-        if (operation.action == Action.ADD)
+        if (operation.action == Action.ADD && operation.o)
         {
             GameObject temp = operation.o;
             undoStack.Push(new Operation(temp.name, temp.transform));
@@ -333,10 +342,10 @@ public class BlockPlacing : MonoBehaviour
         if (operation.action == Action.DELETE)
         {
             GameObject temp = (GameObject)Instantiate(Resources.Load(operation.name), theBuild.transform);
-            temp.transform.position = operation.t.position;
-            temp.transform.rotation = operation.t.rotation;
-            temp.transform.localScale = operation.t.localScale;
-            undoStack.Push(new Operation(temp.name, temp.transform));
+            temp.transform.position = operation.pos;
+            temp.transform.rotation = operation.rot;
+            temp.transform.localScale = operation.scl;
+            undoStack.Push(new Operation(temp));
         }
     }
 }
