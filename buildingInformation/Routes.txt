@@ -1,0 +1,30 @@
+-- Routes --
+
+** Landmarks Route **
+Purdue Memorial Union
+Academy Park
+Loeb Fountain
+Bell Tower
+Engineering Fountain
+
+** Engineering and Science Route **
+Lilly 
+Brown 
+Wetherill 
+Lawson
+Engineering Fountain
+Armstrong
+
+** Historical Buildings Route **
+Purdue Memorial Union
+Stewart Center
+Armory
+Elliot
+Hovde
+
+** Sports and Leisure Route**
+Mackey Arena
+Ross-Ade Stadium
+CoRec
+Academy Park
+Hicks 
