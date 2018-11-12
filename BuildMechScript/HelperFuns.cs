@@ -95,6 +95,21 @@ public class HelperFuns
         }
     }
 
+    public static bool DeleteShip(string shipName)
+    {
+        string path = Application.persistentDataPath + "/" + shipName + ".json";
+        Debug.Log(path);
+
+        if (!File.Exists(path))
+        {
+            return false;
+        }
+
+        File.Delete(path);
+       
+        return true;
+    }
+
     public static void WordCenser(string str)
     {
         foreach(string word in wordsToCerser)
