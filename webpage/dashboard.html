@@ -2,8 +2,49 @@
 <html>
     <head>
         <title>Buildr Admin Dashboard</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS from CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+        <link rel="stylesheet" href="dashboard.css">
     </head>
     <body>
-        <h1>Wow you did it</h1>
+        <nav class="navbar navbar-inverse navbar-fixed-top align-middle">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="logo.png" class="logo"></a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                    <li><a href="#users" data-toggle="tab">Users</a></li>
+                    <li><a href="#reports" data-toggle="tab">Reports</a></li>
+                    <li><a href="#change" data-toggle="tab">Changelog</a></li>
+                  </ul>
+                </div>
+        </nav>
+
+        <!-- Create a div for each page and use Bootstrap for tabs-->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <h1>Home</h1>
+            </div>
+
+            <div class="tab-pane fade" id="users">
+                <h1>Users</h1>
+            </div>
+
+            <div class="tab-pane fade" id="reports">
+                <h1>Reports</h1>
+            </div>
+
+            <div class="tab-pane fade" id="change">
+                    <h1>Changelog</h1>
+            </div>
+        </div>
     </body>
 </html>
