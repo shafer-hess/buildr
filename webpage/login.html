@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!doctype html>
 <html lang = "en">
     <head>
@@ -18,6 +22,19 @@
     </head>
 
     <body>
+        <?php
+            if(isset($_SESSION['error']) && $_SESSION['error'] == 1) {
+                echo "<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Incorrect Username or Password</strong>
+                      </div>";
+
+                $_SESSION['error'] = 0;
+            }
+        ?>
+
         <div class="container">
             <div class="row align-items-center" id="logo">
                 <div class="col-sm"></div>
@@ -36,7 +53,7 @@
                                 <div class="input-group-addon">    
                                     <i class="fa fa-user fa-lg"></i> 
                                 </div>
-                                <input class="form-control" type="text" id="username" placeholder="Username" name="username">     
+                                <input class="form-control" type="text" id="username" placeholder="Username" name="username" required>     
                            </div>
                         </div>
 
@@ -47,7 +64,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-lock fa-lg"></i>
                                     </div>
-                                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                                    <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
                             </div>
                         </div>
 
@@ -60,7 +77,7 @@
                 </div>    
             </div>          
         </div>
-     
+
         <!-- Optional Javascript -->
         <!-- JQuery, Popper.js, Bootstrap.js -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 

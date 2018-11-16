@@ -2,6 +2,9 @@
         #                                 ===== USAGE =====
         #               POST or GET "username" and "password" forms to "IPv4 address"/loginAuthentication.php
 
+        session_start();
+        $_SESSION['error'] = 0;
+
         # use $_GET for URL data
         $username = $_GET["username"];
         $password = $_GET["password"];
@@ -27,14 +30,18 @@
                                 #echo "Password is valid!\n";
                                 $fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
                                 #echo $fullResult;
-                                header('Location: /dashboard.html');
+                                session_destroy();
+                                header('Location: dashboard.html');
                         } else {
                                 #echo "Invalid password!\n";
-                                echo 0;
+                                $_SESSION['error'] = 1;
+                                header('Location: login.html');
                         }
                         $result->close();
                 } else {
-                        echo 2; # user was not found
+                        #echo 2; # user was not found
+                        $_SESSION['error'] = 1;
+                        header('Location: login.html');
                         $result->close();
                 }
         }
