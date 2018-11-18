@@ -2,6 +2,8 @@
 
 $buildr = new mysqli('buildr.cuxgs3tcx7pv.us-east-2.rds.amazonaws.com', 'youseethat', 'X2mJaMNR4oCRYXVFrKt6', 'buildr', '3306');
 
+if(file_exists('/var/www/html/users.json')) { unlink('/var/www/html/users.json'); }
+
 if ($buildr->connect_errno) {
     printf("Connection to database failed: %s\n", $buildr->connect_error);
     exit();
@@ -23,11 +25,13 @@ if ($result = $buildr->query($query_request)) {
 
     $response['users'] = $users;
     
-    $file = fopen('users.json', 'w');
+    $file = fopen('/var/www/html/users.json', 'x+');
     fwrite($file, json_encode($response, JSON_PRETTY_PRINT));
     fclose($file);
 }
 
 $buildr->close();
+
+header('Location: dashboard.html#users');
 
 ?>
