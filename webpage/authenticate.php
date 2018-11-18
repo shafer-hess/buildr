@@ -30,7 +30,6 @@
                                 #echo "Password is valid!\n";
                                 $fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
                                 #echo $fullResult;
-                                session_destroy();
                                 header('Location: dashboard.html');
                         } else {
                                 #echo "Invalid password!\n";

@@ -1,7 +1,6 @@
 <?php
     session_start();
 ?>
-
 <!doctype html>
 <html lang = "en">
     <head>
@@ -24,9 +23,9 @@
     <body>
         <?php
             if(isset($_SESSION['error']) && $_SESSION['error'] == 1) {
-                echo "<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
+                echo "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                          <span aria-hidden=\"true\">&times;</span>
                         </button>
                         <strong>Incorrect Username or Password</strong>
                       </div>";
@@ -44,7 +43,7 @@
 
             <div class="row">
                 <div class="form-wrapper">
-                    <form action="/authenticate.php" method="GET">
+                    <form action="authenticate.php" method="GET">
                         <h2 class="text-center">Login</h2>
                         <br/>
                         
