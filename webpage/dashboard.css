@@ -15,6 +15,14 @@ html {
     height: 45px;
 }
 
+.title {
+    padding-bottom: 20px;
+}
+
+#users {
+    width: 96%;
+}
+
 .navbar-header {
     display: inline;
     vertical-align: middle;

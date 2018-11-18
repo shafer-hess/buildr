@@ -1,3 +1,7 @@
+<?php 
+    include "getUserTable.php";
+    getUsers();
+?>
 <!doctype html>
 <html>
     <head>
@@ -8,18 +12,38 @@
         <!-- Bootstrap CSS from CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
         <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     </head>
     <body>
+        <!-- JS for saving tab location on reload -->
+        <script>
+            $(document).ready(function() {
+                if (location.hash) {
+                    $("a[href='" + location.hash + "']").tab("show");
+                }
+                $(document.body).on("click", "a[data-toggle]", function(event) {
+                    location.hash = this.getAttribute("href");
+                });
+            });
+            
+            $(window).on("popstate", function() {
+                var anchor = location.hash || $("a[data-toggle='tab']").first().attr("href");
+                $("a[href='" + anchor + "']").tab("show");
+            });
+        </script>
+
         <nav class="navbar navbar-inverse navbar-fixed-top align-middle">
                 <div class="container-fluid">
                   <div class="navbar-header">
                     <a class="navbar-brand" href="#"><img src="logo.png" class="logo"></a>
                   </div>
-                  <ul class="nav navbar-nav">
+                  <ul class="nav navbar-nav" id="tabLinks">
                     <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
                     <li><a href="#users" data-toggle="tab">Users</a></li>
                     <li><a href="#reports" data-toggle="tab">Reports</a></li>
@@ -37,7 +61,46 @@
 
             <!-- Users Page -->
             <div class="tab-pane fade" id="users">
-                <h1>Users</h1>
+               <div class="title">
+                    <h1>Users</h1>
+               </div>
+
+                <table id="userTable" class="display" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <script>
+                        $(document).ready(function() {                   
+                            $('#userTable').DataTable({
+                                ajax: {
+                                    url: "users.json",
+                                    dataSrc: "users"
+                                },
+    
+                                 'columns': [
+                                    {data: "First Name"},
+                                    {data: "Last Name"},
+                                    {data: "Email"},
+                                    {data: "Username"}
+                                ]
+                            });
+                        });   
+                </script>
             </div>
 
             <!-- Reports Page -->
