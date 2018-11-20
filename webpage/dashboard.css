@@ -3,8 +3,64 @@ html {
 }
 
 .navbar {
+    margin: 0;
+    display: inline-block;
+    height: 80px; 
+}
+.navbar-header {
+    display: inline;
+}
+
+.nav.navbar-nav li a{
+    padding-top: 29px;
+    text-align: center;
     height: 80px;
-    min-width: 50px;
+}
+
+body {
+    max-width: 100%;
+    padding-top: 80px;
+    margin-top: 0px;
+}
+
+.tabButton {
+    background: transparent;
+    border: none;
+    font-size: 0;
+}
+
+.title {
+    max-width: 100%;
+    height: 175px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+}
+
+#card1, #card2, #card3 {
+    transition: transform .2s;
+}
+
+#card1:hover, #card2:hover, #card3:hover {
+    transform: scale(1.1);
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards.col-sm-4.text-center img{
+    max-width: 100%;
+    width: 90%;
+    padding-top: 10px; 
+}
+
+.tab-pane {
+    height: 175px;
+    width: 100%;
+    background-color: #C0B283;
 }
 
 .container-fluid {
@@ -13,26 +69,17 @@ html {
 
 .logo {
     height: 45px;
+    padding-right: 25px;
 }
 
-.title {
-    padding-bottom: 20px;
+#tableTitle {
+    padding-bottom: 15px;
 }
 
-#users {
-    width: 96%;
-}
-
-.navbar-header {
-    display: inline;
-    vertical-align: middle;
-}
-
-.nav.navbar-nav li a{
-    padding-top: 29px;
-    text-align: center;
-    vertical-align: middle;
-    height: 80px;
+.table-format {
+    padding: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
 .container {
@@ -42,6 +89,5 @@ html {
 }
 
 .tab-content {
-    padding-top: 85px;
-    padding-left: 40px;
+    display: inline;
 }

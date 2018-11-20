@@ -20,6 +20,12 @@ body {
     max-height: 100px;
 }
 
+#reportButton {
+    padding-top: 20px;
+    margin: 0;
+    text-align: center;
+}
+
 .form-wrapper {
     background: #eee;
     color: #666;

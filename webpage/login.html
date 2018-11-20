@@ -70,12 +70,92 @@
                         <br/>
 
                         <div class="align-center"> 
-                                <button type="submit" class="btn btn-default" id="login">Login</button>
+                                <button type="submit" class="btn btn-primary" id="login">Login</button>
                         </div>
                     </form>
                 </div>    
-            </div>          
+            </div>  
+            
+            <!-- Modal Triger Buttons -->
+            <div class="row align-items-center" id="reports">
+                <div class="col-sm"></div>
+                <div class="col-sm" id="reportButton">
+
+                    <button type="button" class="btn btn-" data-toggle="modal" data-target="#reportUserModal">
+                        Report a User
+                    </button>
+
+                    <button type="button" class="btn btn-" data-toggle="modal" data-target="#changelogModal">
+                        Changelog
+                    </button>
+
+                </div>
+                <div class="col-sm"></div>
+            </div>
         </div>
+
+        <!-- Report User Modal -->
+        <div class="modal fade" id="reportUserModal" tabindex="-1" role="dialog" aria-labelledby="reportUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5>Report a User</h5>
+                    </div>
+
+                    <div class="modal-body">        
+                        <form id="reportForm">
+                            <h6>Username</h6>
+                            <input type="text" name="username" required><br><br>
+                            <h6>Reason for Report</h6>
+                            <input type="text" name="reportReason" required><br><br>
+                            <button type="submit" class="btn btn-primary" id="reportSubmit">Report User</button>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- END REPORT MODAL -->
+
+        <!-- Changelog Modal -->
+        <div class="modal fade" id="changelogModal" tabindex="-1" role="dialog" aria-labelledby="changelogModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5>Buildr Changelog</h5>
+                    </div>
+
+                    <div class="modal-body">   
+                        <h2>Buildr v0.4</h2><br>
+                        <h4><u>What's New</u></h4>
+                        <ul>
+                            <li>New Administratioin Webpage will make it easier to support users</li>
+                            <li>Users can now select up to 18 buildings to view in AR</li>
+                            <li>Users can now report individuals who produce inappropriate content</li>
+                        </ul>
+
+                        <h4><u>Coming Soon v0.5</u></h4>
+                        <ul>
+                            <li>User will soon be able to upload their structures to the Buildr Database</li>
+                            <li>Support for User created structures in AR</li>
+                            <li>Communication between Users</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- END CHANGELOG MODAL -->
 
         <!-- Optional Javascript -->
         <!-- JQuery, Popper.js, Bootstrap.js -->
