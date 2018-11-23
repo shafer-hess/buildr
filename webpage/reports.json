@@ -1,0 +1,14 @@
+{
+    "reports": [
+        {
+            "ID": "1",
+            "Username": "shafer",
+            "Report Text": "terrible coder"
+        },
+        {
+            "ID": "2",
+            "Username": "derek",
+            "Report Text": "best SQL coder"
+        }
+    ]
+}

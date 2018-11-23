@@ -131,22 +131,20 @@
                         <h5>Buildr Changelog</h5>
                     </div>
 
-                    <div class="modal-body">   
-                        <h2>Buildr v0.4</h2><br>
-                        <h4><u>What's New</u></h4>
-                        <ul>
-                            <li>New Administratioin Webpage will make it easier to support users</li>
-                            <li>Users can now select up to 18 buildings to view in AR</li>
-                            <li>Users can now report individuals who produce inappropriate content</li>
-                        </ul>
+                    <div class="modal-body" id="updater"></div>
 
-                        <h4><u>Coming Soon v0.5</u></h4>
-                        <ul>
-                            <li>User will soon be able to upload their structures to the Buildr Database</li>
-                            <li>Support for User created structures in AR</li>
-                            <li>Communication between Users</li>
-                        </ul>
-                    </div>
+                    <!-- Fill DIV with changelog -->
+                    <script>
+                        var file = new XMLHttpRequest();
+                        file.open('GET', 'changelog.txt', true); 
+                        file.onreadystatechange = function() {
+                            if(file.readyState === 4) {
+                                var html = file.responseText;
+                                document.getElementById('updater').innerHTML = html;
+                            }
+                        }
+                        file.send(null);
+                    </script>
 
                     <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

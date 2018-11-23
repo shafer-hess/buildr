@@ -18,6 +18,12 @@
     
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+        <!-- CDN and CSS for Markdown Editor (Changelog) and Showdown.js -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+
         <link rel="stylesheet" href="dashboard.css">
     </head>
     <body>
@@ -97,7 +103,6 @@
                             </tr>
                         </tfoot>
                     </table>
-
                     <script>
                             $(document).ready(function() {                   
                                 $('#userTable').DataTable({
@@ -117,7 +122,7 @@
                     </script>
                     <br>
                     <form action="getUserTable.php" method="GET">
-                        <button type="submit" class="btn btn-default" id="refresh">Refresh List</button>
+                        <button type="submit" class="btn btn-default" id="refresh">Refresh Users</button>
                     </form>
                     <br>
                     <hr>
@@ -158,31 +163,33 @@
                         </tfoot>
                     </table>
                     <script>
-                        /*
                         $(document).ready(function() {                   
                             $('#reportTable').DataTable({
                                 ajax: {
-                                    url: "users.json",
-                                    dataSrc: "users"
+                                    url: "reports.json",
+                                    dataSrc: "reports"
                                 },
     
                                 'columns': [
-                                    {data: "First Name"},
-                                    {data: "Last Name"},
-                                    {data: "Email"},
-                                    {data: "Username"}
+                                    {data: "ID"},
+                                    {data: "Username"},
+                                    {data: "Report Text"},
                                 ]
                             });
-                        });
-                        */   
+                        }); 
                     </script>
+                    <br>
+                    <form action="getReportsTable.php" method="GET">
+                        <button type="submit" class="btn btn-default" id="refresh">Refresh Reports</button>   
+                    </form>
                     <br>
                     <hr>
                     <h1>Release Report</h1> 
                     <div class="delete" style="height:200px;">
-                        <form>
+                        <form action="releaseReport.php" method="GET">
                             <h4>Enter Report ID</h4>
                             <input type="text" name="release" required><br><br>
+                            <button type="submit" class="btn" style="background-color: #C0B283;">Release</button>
                         </form>
                     </div>
                 </div>
@@ -192,6 +199,38 @@
             <div class="tab-pane fade" id="change">
                 <div class="title">
                     <h1>Changelog</h1>
+                </div>
+                <div class="table-format">
+                    <div class="tableTitle">
+                        <h1>Current Version</h1>
+                    </div>
+
+                    <div class="changelog-editor">
+                        <textarea id="editor"></textarea>
+                        <br><button class="btn" id="submitChangelog" style="background-color: #C0B283;">Submit Changelog</button>
+                        <script>
+                                var md = new SimpleMDE({ 
+                                    element: document.getElementById("editor"),
+                                    autosave: {
+                                        enabled: true,
+                                        uniqueId: "changelogAutosave",
+                                        delay: 1000
+                                    },
+                                    spellChecker: false
+                                });
+
+                                $('button').click(function(e) {
+                                    var id = e.target.id;
+                                    if(id === "submitChangelog") {
+                                        var text = md.value();
+                                        var converter = new showdown.Converter();
+                                        var html = converter.makeHtml(text);
+
+                                        $.get('changelog.php', {changelog: html});
+                                    }
+                                });
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
