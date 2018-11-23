@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="form-wrapper">
                     <form action="authenticate.php" method="GET">
-                        <h2 class="text-center">Login</h2>
+                        <h2 class="text-center">Admin Login</h2>
                         <br/>
                         
                         <div class="form-field">
@@ -104,11 +104,11 @@
                     </div>
 
                     <div class="modal-body">        
-                        <form id="reportForm">
+                        <form id="reportForm" action="addReport.php" method="GET">
                             <h6>Username</h6>
                             <input type="text" name="username" required><br><br>
                             <h6>Reason for Report</h6>
-                            <input type="text" name="reportReason" required><br><br>
+                            <input type="text" name="report_text" required><br><br>
                             <button type="submit" class="btn btn-primary" id="reportSubmit" style="background-color: #C0B283; border: none">Report User</button>
                         </form>
                     </div>
