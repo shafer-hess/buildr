@@ -8,3 +8,6 @@ web request:
           ...
         }
     
+    
+    string msg = "sampleUserName" + "sampleLocation";
+    using (UnityWebRequest www = UnityWebRequest.Get(url + "downloadBuild.php?message=" + msg))
