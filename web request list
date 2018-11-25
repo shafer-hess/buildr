@@ -18,4 +18,10 @@ select randomly one row from{
         where location==request.location AND (privacy==0 OR userName = request.username)
 }
 
+
+
 downloadBuild.php?userName=sampleUserName&location=sampleLocation
+
+addReport.php?username&report_text;
+
+upvoteBuild.php?username=samplename&buildname=samplelocation
