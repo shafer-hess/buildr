@@ -1,0 +1,10 @@
+web request:
+
+        string msg = buildData + "-" + buildName + "-" + userName + "-" + location + "-" + privicy + "-" + avatar;
+      
+
+        using (UnityWebRequest www = UnityWebRequest.Get(url + "uploadBuild.php?message=" + msg))
+        {
+          ...
+        }
+    
