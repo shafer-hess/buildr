@@ -17,3 +17,5 @@ select randomly one row from{
         select * from ...
         where location==request.location AND (privacy==0 OR userName = request.username)
 }
+
+downloadBuild.php?userName=sampleUserName&location=sampleLocation
