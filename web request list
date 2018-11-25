@@ -15,5 +15,5 @@ web request:
 
 select randomly one row from{
         select * from ...
-        where location==request.location AND privacy==0 OR userName = request.username
+        where location==request.location AND (privacy==0 OR userName = request.username)
 }
