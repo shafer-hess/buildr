@@ -11,3 +11,9 @@ web request:
     
     string msg = "sampleUserName" + "sampleLocation";
     using (UnityWebRequest www = UnityWebRequest.Get(url + "downloadBuild.php?message=" + msg))
+
+
+select randomly one row from{
+        select * from ...
+        where location==request.location AND privacy==0 OR userName = request.username
+}
