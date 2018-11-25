@@ -1,0 +1,28 @@
+Database Endpoint:	buildr.cuxgs3tcx7pv.us-east-2.rds.amazonaws.com
+
+Database Username:	youseethat
+
+Database Password:	X2mJaMNR4oCRYXVFrKt6
+
+Database Name: buildr
+
+Database Port: 3306
+
+==============================================================================================
+
+Linux Server IPv4 Address:	ec2-18-217-185-132.us-east-2.compute.amazonaws.com
+18.217.185.132
+
+# PHP 7 specific configuration
+<IfModule php7_module>
+    AddType application/x-httpd-php .php
+    AddType application/x-httpd-php-source .phps
+    <IfModule dir_module>
+        DirectoryIndex index.html index.php
+    </IfModule>
+</IfModule>
+
+
+sudo apt-get install php libapache2-mod-php
+sudo a2enmod mpm_prefork && sudo a2enmod php7.0
+sudo service apache2 restart

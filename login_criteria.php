@@ -1,42 +1,29 @@
 <?php
-	
-	$valid=false;
-	function users($user, $pass, $valid) {
-		if($valid=false){
-			echo "Unsuccessful login. Try again.\n";
-		} else {
-			$valid=true;
-			echo "Successful login.\n";
-		}
+	//$success=0;
+	function database($user, $pass){
+		$success=0;
+		if($user=="john1" && $pass=="John1234"){
+			$success+=1;
+			//$string="Welcome $user\n";
+		} else if($user=="sally" && $pass=="Sally123"){
+			$success+=1;
+		} 
+		return $success;
 	}
-		$user1=users("john1", "John1234", true);
-		$user2=users("sally", "Sally001", true);
-		$user3=users("joe123", "Joe12345", true);
-		$user4=users("jackson", "Jackson1", true);
-		$user5=users("lizzy", "Lizzy321", true);
-
-		$database=array($user1, $user2, $user3, $user4, $user5);
-	
-		//login tries counter
-		$tries=0;
-		$login=false;
-	
-		$user6=users("john1", "John4321", false);
-		//$user6=$user1
-		while($tries < 4){
-			if(in_array($user6, $database)){
-				echo "Login successful.\n";
-				exit();
-			} else {
-				$tries++;
-				$left=3-$tries;
-				echo "$left tries left.\n";
-			}
-		}
-		if($tries == 3){
-			echo "Too many failed login attempts. Please try agian later.\n";
+	//$user1=database("john1", "John1234");
+	$user1=database("john1", "John1235");
+	$tries=0;
+	while($tries < 3){
+		if($user1 > 0){
+			echo "Welcome.\n";
 			exit();
-		}	
-	
-//	users("john1", "John4321");
+		} else {
+			$tries++;
+			$left=3-$tries;
+			echo "Invalid.You have $left attempts left.\n";
+		}
+	}//while loop
+	if($tries == 3){
+		echo "Please try again later.\n";
+	}
 ?>
