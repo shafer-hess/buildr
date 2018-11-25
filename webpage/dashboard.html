@@ -56,6 +56,7 @@
                     <li><a href="#users" data-toggle="tab" id="usersTab">Users</a></li>
                     <li><a href="#reports" data-toggle="tab" id="reportsTab">Reports</a></li>
                     <li><a href="#change" data-toggle="tab" id="changeTab">Changelog</a></li>
+                    <li><a href="#model" data-toggle="tab" id="modelTab">Models</a></li>
                   </ul>
                 </div>
         </nav>
@@ -69,9 +70,10 @@
                 </div>
 
                 <div class="row no-gutters text-center">
-                    <div class="cards col-sm-4 text-center" id="card1" onclick="$('#usersTab').trigger('click')"><img src="cards/userCard.png"/></div>
-                    <div class="cards col-sm-4 text-center" id="card2" onclick="$('#reportsTab').trigger('click')"><img src="cards/reportCard.png"/></div>
-                    <div class="cards col-sm-4 text-center" id="card3" onclick="$('#changeTab').trigger('click')"><img src="cards/changelogCard.png"/></div>
+                    <div class="cards col-sm-3 text-center" id="card1" onclick="$('#usersTab').trigger('click')"><img src="cards/userCard.png"/></div>
+                    <div class="cards col-sm-3 text-center" id="card2" onclick="$('#reportsTab').trigger('click')"><img src="cards/reportCard.png"/></div>
+                    <div class="cards col-sm-3 text-center" id="card3" onclick="$('#changeTab').trigger('click')"><img src="cards/changelogCard.png"/></div>
+                    <div class="cards col-sm-3 text-center" id="card4" onclick="$('#modelTab').trigger('click')"><img src="cards/modelCard.png"/></div>
                 </div>
             </div>
 
@@ -230,6 +232,79 @@
                                     }
                                 });
                         </script>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Models Page -->
+            <div class="tab-pane fade" id="model">
+                <div class="title">
+                    <h1>Models</h1>
+                </div>
+
+                <div class="table-format">
+                    <div class="tableTitle">
+                        <h1>All Models</h1>
+                    </div>
+                    <table id="modelTable" class="display table table-striped table-bordered" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>Build Data</th>
+                                <th>Build Name</th>
+                                <th>Username</th>
+                                <th>Location</th>
+                                <th>Privacy</th>
+                                <th>Avatar</th>                                                                
+                                <th>Upvotes</th>                                
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Build Data</th>
+                                <th>Build Name</th>
+                                <th>Username</th>
+                                <th>Location</th>
+                                <th>Privacy</th>
+                                <th>Avatar</th>                                                                
+                                <th>Upvotes</th> 
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <!-- Make Script for Reading Model Table-->
+                    <script>
+                        $(document).ready(function() {                   
+                            $('#modelTable').DataTable({
+                                ajax: {
+                                    url: "models.json",
+                                    dataSrc: "models"
+                                },
+    
+                                'columns': [
+                                    {data: "Build Data"},
+                                    {data: "Build Name"},
+                                    {data: "Username"},
+                                    {data: "Location"},
+                                    {data: "Privacy"},
+                                    {data: "Avatar"},                                    
+                                    {data: "Upvotes"}                                
+                                ]
+                            });
+                        });                           
+                    </script>
+                    <br>
+                    <form action="getReportsTable.php" method="GET">
+                        <button type="submit" class="btn btn-default" id="refresh">Refresh Reports</button>   
+                    </form>
+                    <br>
+                    <hr>
+                    <h1>Delete Model</h1>
+                    <div class="delete" style="height:200px;">
+                            <form action="deleteModel.php" method="GET">
+                                <h4>Enter Model Name</h4>
+                                <input type="text" name="delete" required><br><br>
+                                <button type="submit" class="btn" style="background-color: #C0B283;">Delete</button>
+                            </form>
                     </div>
                 </div>
             </div>

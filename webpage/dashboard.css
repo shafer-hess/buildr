@@ -38,11 +38,11 @@ body {
     color: #FFF;
 }
 
-#card1, #card2, #card3 {
+#card1, #card2, #card3, #card4 {
     transition: transform .2s;
 }
 
-#card1:hover, #card2:hover, #card3:hover {
+#card1:hover, #card2:hover, #card3:hover, #card4:hover {
     transform: scale(1.1);
 }
 
@@ -51,7 +51,7 @@ body {
     margin-right: auto;
 }
 
-.cards.col-sm-4.text-center img{
+.cards.col-sm-3.text-center img{
     max-width: 100%;
     width: 80%;
     padding-top: 10px; 
