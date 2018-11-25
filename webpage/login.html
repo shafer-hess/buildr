@@ -136,11 +136,11 @@
                     <!-- Fill DIV with changelog -->
                     <script>
                         var file = new XMLHttpRequest();
-                        file.open('GET', 'changelog.txt', true); 
+                        file.open('GET', '/changelog.txt', false); 
                         file.onreadystatechange = function() {
                             if(file.readyState === 4) {
                                 var html = file.responseText;
-                                document.getElementById('updater').innerHTML = html;
+                                document.getElementById("updater").innerHTML = html;
                             }
                         }
                         file.send(null);
