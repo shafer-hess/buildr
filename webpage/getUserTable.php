@@ -19,8 +19,11 @@ if ($result = $buildr->query($query_request)) {
         $lastName = $row['lastName'];
         $email = $row['email'];
         $username = $row['username'];
+        $rank = $row['rank'];
+        $status = $row['status'];
 
-        $users[] = array('First Name' => $firstName, 'Last Name' => $lastName, 'Email' => $email, 'Username' => $username);
+        $users[] = array('First Name' => $firstName, 'Last Name' => $lastName, 'Email' => $email, 
+        'Username' => $username, 'Rank' => $rank, 'Status' => $status);
     }
 
     $response['users'] = $users;

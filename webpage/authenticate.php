@@ -26,7 +26,7 @@
                         #printf("User exists... Verifying passwords...\n");
                         $hashed_pass = $row['password'];
                         #printf("Returned hash: %s\n", $hashed_pass);
-                        if (password_verify($password, $hashed_pass)) {
+                        if (password_verify($password, $hashed_pass) && $row['rank'] == "administrator") {
                                 #echo "Password is valid!\n";
                                 $fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
                                 #echo $fullResult;

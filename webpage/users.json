@@ -4,91 +4,89 @@
             "First Name": "Wink",
             "Last Name": "Lemon",
             "Email": "happylemonusa@gmail.com",
-            "Username": "happylemon"
+            "Username": "happylemon",
+            "Rank": "administrator",
+            "Status": "banned"
         },
         {
             "First Name": "Pekoe",
             "Last Name": "TeaBar",
             "Email": "pekotbar@gmail.com",
-            "Username": "pekoetbar"
+            "Username": "pekoetbar",
+            "Rank": "default",
+            "Status": "good"
         },
         {
             "First Name": "Derek",
             "Last Name": "Shu",
             "Email": "hess33@purdue.edu",
-            "Username": "teaspoon"
+            "Username": "teaspoon",
+            "Rank": "default",
+            "Status": "good"
         },
         {
             "First Name": "Shafer",
             "Last Name": "Hess",
             "Email": "shu17@purdue.edu",
-            "Username": "grr"
+            "Username": "grr",
+            "Rank": "default",
+            "Status": "good"
         },
         {
             "First Name": "Mangkorn",
             "Last Name": "Yuan",
             "Email": "mangkorn.yuan98@gmail.com",
-            "Username": "mang"
+            "Username": "mang",
+            "Rank": "default",
+            "Status": "good"
         },
         {
             "First Name": "asdf",
             "Last Name": "asd",
             "Email": "asd",
-            "Username": "asd"
-        },
-        {
-            "First Name": "sdfsdfsdf",
-            "Last Name": "asd",
-            "Email": "fdgdfg",
-            "Username": "11111111111111111111111111111111"
-        },
-        {
-            "First Name": "dd",
-            "Last Name": "dd",
-            "Email": "dd",
-            "Username": "dd"
-        },
-        {
-            "First Name": "w",
-            "Last Name": "q",
-            "Email": "w",
-            "Username": "w"
+            "Username": "asd",
+            "Rank": "default",
+            "Status": "good"
         },
         {
             "First Name": "djdjdjd",
             "Last Name": "ejdjjd",
             "Email": "angkorn.yuan98@gmail.com",
-            "Username": "manghgh"
-        },
-        {
-            "First Name": "hththththghghghghfhfhfhfhthththf",
-            "Last Name": "hththththghghghghfhfhfhfhthththf",
-            "Email": "hththththghghghghfhfhfhfhthththfhthfhfhfhfhfhfhfhf",
-            "Username": "hththththghghghghfhfhfhfhthththf"
-        },
-        {
-            "First Name": "fhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfh",
-            "Last Name": "hththththghghghghfhfhfhfhthththf",
-            "Email": "fhthjdjdjdjdjdjdjdhdhdhdhdhdhdhdhdhdhdhdhfhfhfhfhf",
-            "Username": "hththththghghghghfhfhfhfhthththf"
+            "Username": "manghgh",
+            "Rank": "default",
+            "Status": "good"
         },
         {
             "First Name": "bob",
             "Last Name": "marley",
             "Email": "urjfhfjf",
-            "Username": "newbobby"
+            "Username": "newbobby",
+            "Rank": "default",
+            "Status": "good"
         },
         {
             "First Name": "first",
             "Last Name": "last",
             "Email": "email",
-            "Username": "user"
+            "Username": "user",
+            "Rank": "default",
+            "Status": "good"
         },
         {
-            "First Name": "Milton",
-            "Last Name": "Bradley",
-            "Email": "Bradley@gmail.com",
-            "Username": "BradleyMilton"
+            "First Name": "Model",
+            "Last Name": "User",
+            "Email": "User@gmail.com",
+            "Username": "UserModel",
+            "Rank": "default",
+            "Status": "good"
+        },
+        {
+            "First Name": "Barry",
+            "Last Name": "Manilow",
+            "Email": "Manilow@gmail.com",
+            "Username": "ManilowBarry",
+            "Rank": "default",
+            "Status": "good"
         }
     ]
 }
