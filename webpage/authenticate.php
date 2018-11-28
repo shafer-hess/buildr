@@ -4,6 +4,7 @@
 
         session_start();
         $_SESSION['error'] = 0;
+        $_SESSION['loggedIn'] = false;
 
         # use $_GET for URL data
         $username = $_GET["username"];
@@ -30,6 +31,7 @@
                                 #echo "Password is valid!\n";
                                 $fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
                                 #echo $fullResult;
+                                $_SESSION['loggedIn'] = true;
                                 header('Location: dashboard.html');
                         } else {
                                 #echo "Invalid password!\n";

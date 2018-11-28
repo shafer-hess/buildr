@@ -38,6 +38,17 @@ body {
     color: #FFF;
 }
 
+#logout-form {
+    padding-top: 20px;
+    padding-right: 40px;
+}
+
+#logout-btn {
+    float: right;
+    background-color: #C0B283;
+    color: white;
+}
+
 #card1, #card2, #card3, #card4 {
     transition: transform .2s;
 }

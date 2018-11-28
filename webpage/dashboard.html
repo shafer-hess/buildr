@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == false) {
+        header('Location: login.html');
+    }
 ?>
 <!doctype html>
 <html>
@@ -58,6 +61,11 @@
                     <li><a href="#change" data-toggle="tab" id="changeTab">Changelog</a></li>
                     <li><a href="#model" data-toggle="tab" id="modelTab">Models</a></li>
                   </ul>
+                  <div class="logout">
+                    <form action="logout.php" id="logout-form">
+                        <button type="submit" class="btn" id="logout-btn">Log Out</button>
+                    </form>
+                  </div> 
                 </div>
         </nav>
 
