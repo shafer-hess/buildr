@@ -251,6 +251,16 @@
                                     spellChecker: false
                                 });
 
+                                var file = new XMLHttpRequest();
+                                file.open('GET', '/md.txt', false);
+                                file.onreadystatechange = function() {
+                                    if(file.readyState === 4) {
+                                        var val = file.responseText;
+                                        md.value(val)
+                                    }
+                                }
+                                file.send(null);
+
                                 $('button').click(function(e) {
                                     var id = e.target.id;
                                     if(id === "submitChangelog") {
@@ -258,7 +268,7 @@
                                         var converter = new showdown.Converter();
                                         var html = converter.makeHtml(text);
 
-                                        $.get('changelog.php', {changelog: html});
+                                        $.get('changelog.php', {changelog: html, md: text});
                                     }
                                 });
                         </script>
