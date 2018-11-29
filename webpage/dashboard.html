@@ -336,6 +336,14 @@
                                     url: "models.json",
                                     dataSrc: "models"
                                 },
+
+                                columnDefs: [{
+                                    targets: 1,
+                                    render: function(data, type, row) {
+                                        return data.length > 20 ?
+                                        data.substr(0,20) + '...' : data; 
+                                    }
+                                }],
     
                                 'columns': [
                                     {data: "Model ID"},
