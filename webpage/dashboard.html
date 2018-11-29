@@ -169,7 +169,7 @@
                         </form>
                     </div>
 
-                    <div class="rank form-group" style="height: 400px; display: inline-block; padding-left: 575px; position: absolute">
+                    <div class="rank form-group" style="height: 400px; display: inline-block; padding-left: 550px; position: absolute">
                         <h1>Update Rank</h1>
                         <form action="setRank2.php" method="GET">
                             <h4>Enter Username:</h4>
@@ -305,6 +305,7 @@
                     <table id="modelTable" class="display table table-striped table-bordered" style="width: 100%">
                         <thead>
                             <tr>
+                                <th>Model ID</th>
                                 <th>Build Data</th>
                                 <th>Build Name</th>
                                 <th>Username</th>
@@ -316,6 +317,7 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>Model ID</th>
                                 <th>Build Data</th>
                                 <th>Build Name</th>
                                 <th>Username</th>
@@ -356,7 +358,7 @@
                     <h1>Delete Model</h1>
                     <div class="delete" style="height:200px;">
                             <form action="deleteModel.php" method="GET">
-                                <h4>Enter Model Name</h4>
+                                <h4>Enter Model ID</h4>
                                 <input type="text" name="delete" required><br><br>
                                 <button type="submit" class="btn" style="background-color: #C0B283;">Delete</button>
                             </form>

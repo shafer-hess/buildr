@@ -15,6 +15,7 @@ $models = array();
 
 if ($result = $buildr->query($query_request)) {
     while($row = $result->fetch_array()) {
+        $id = $row['id'];
         $buildData = $row['buildData'];
         $buildName = $row['buildName'];
         $username = $row['username'];
@@ -23,7 +24,7 @@ if ($result = $buildr->query($query_request)) {
         $avatar = $row['avatar'];
         $upvotes = $row['upvotes'];
 
-        $models[] = array('Build Data' => $buildData, 'Build Name' => $buildName, 'Username' => $username,
+        $models[] = array('Model ID' => $id, 'Build Data' => $buildData, 'Build Name' => $buildName, 'Username' => $username,
          'Location' => $location, 'Privacy' => $privacy, 'Avatar' => $avatar, 'Upvotes' => $upvotes);
     }
 
