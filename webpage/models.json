@@ -1,74 +1,82 @@
 {
     "models": [
         {
-            "Build Data": "",
-            "Build Name": "",
-            "Username": "",
-            "Location": "",
-            "Privacy": "",
-            "Avatar": "",
-            "Upvotes": "0"
-        },
-        {
-            "Build Data": "hehe",
-            "Build Name": "hehe",
-            "Username": "hehe",
-            "Location": "hehe",
-            "Privacy": "hehe",
-            "Avatar": "hehe",
-            "Upvotes": "100"
-        },
-        {
-            "Build Data": "hehe",
-            "Build Name": "hehe",
-            "Username": "hehe",
-            "Location": "hehe",
-            "Privacy": "hehe",
-            "Avatar": "hehe",
-            "Upvotes": "100"
-        },
-        {
-            "Build Data": "hehe",
-            "Build Name": "hehe",
-            "Username": "hehe",
-            "Location": "hehe",
-            "Privacy": "hehe",
-            "Avatar": "hehe",
-            "Upvotes": "0"
-        },
-        {
-            "Build Data": "hehe",
-            "Build Name": "hehe",
-            "Username": "hehe",
-            "Location": "hehe",
-            "Privacy": "hehe",
-            "Avatar": "hehe",
-            "Upvotes": "0"
-        },
-        {
-            "Build Data": "simplestr",
-            "Build Name": "name1",
-            "Username": "samplename",
-            "Location": "sampleloac",
-            "Privacy": "1",
+            "Model ID": "2",
+            "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}}]}",
+            "Build Name": "build0",
+            "Username": "samplename2",
+            "Location": "samplelocation2",
+            "Privacy": "0",
             "Avatar": "0",
             "Upvotes": "0"
         },
         {
-            "Build Data": "simpledata",
-            "Build Name": "name1",
-            "Username": "samplename",
-            "Location": "sampleloac",
-            "Privacy": "1",
-            "Avatar": "0",
-            "Upvotes": "0"
-        },
-        {
+            "Model ID": "3",
             "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-5.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}}]}",
-            "Build Name": "name1",
-            "Username": "samplename",
-            "Location": "sampleloac",
+            "Build Name": "build3",
+            "Username": "samplename3",
+            "Location": "samplelocation3",
             "Privacy": "1",
+            "Avatar": "0",
+            "Upvotes": "0"
+        },
+        {
+            "Model ID": "4",
+            "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-5.0},!rotation!:{!x!:0.0,!y!:-0.7071068286895752,!z!:0.0,!w!:-0.7071068286895752},!scale!:{!x!:1.0000004768371583,!y!:1.0,!z!:1.0000004768371583}}}]}",
+            "Build Name": "******** replace********",
+            "Username": "samplename3",
+            "Location": "samplelocation3",
+            "Privacy": "0",
+            "Avatar": "1",
+            "Upvotes": "0"
+        },
+        {
+            "Model ID": "5",
+            "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-5.0},!rotation!:{!x!:0.0,!y!:-0.7071068286895752,!z!:0.0,!w!:-0.7071068286895752},!scale!:{!x!:1.0000004768371583,!y!:1.0,!z!:1.0000004768371583}}}]}",
+            "Build Name": "******** replace********",
+            "Username": "samplename3",
+            "Location": "samplelocation3",
+            "Privacy": "0",
+            "Avatar": "1",
+            "Upvotes": "0"
+        },
+        {
+            "Model ID": "6",
+            "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-5.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-10.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-15.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}}]}",
+            "Build Name": "aaa",
+            "Username": "samplename3",
+            "Location": "samplelocation3",
+            "Privacy": "0",
+            "Avatar": "1",
+            "Upvotes": "0"
+        },
+        {
+            "Model ID": "7",
+            "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-5.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-10.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}}]}",
+            "Build Name": "****2",
+            "Username": "samplename3",
+            "Location": "samplelocation3",
+            "Privacy": "0",
+            "Avatar": "1",
+            "Upvotes": "0"
+        },
+        {
+            "Model ID": "8",
+            "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-5.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-10.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-15.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-20.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}}]}",
+            "Build Name": "****pack",
+            "Username": "samplename3",
+            "Location": "samplelocation3",
+            "Privacy": "0",
+            "Avatar": "0",
+            "Upvotes": "0"
+        },
+        {
+            "Model ID": "9",
+            "Build Data": "{!shipName!:!defaultName!,!cubeDatas!:[{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:0.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-5.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-10.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-15.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}},{!cubeName!:!Cube0!,!materialName!:!Material0!,!transformDatas!:{!position!:{!x!:0.0,!y!:0.0,!z!:-20.0},!rotation!:{!x!:0.0,!y!:0.0,!z!:0.0,!w!:1.0},!scale!:{!x!:1.0,!y!:1.0,!z!:1.0}}}]}",
+            "Build Name": "****pack",
+            "Username": "samplename3",
+            "Location": "samplelocation3",
+            "Privacy": "0",
             "Avatar": "0",
             "Upvotes": "0"
         }
