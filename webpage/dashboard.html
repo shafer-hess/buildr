@@ -142,14 +142,30 @@
                     </form>
                     <br>
                     <hr>
-                    <h1>Delete User</h1>
-                    <div class="delete" style="height: 200px;">
+
+                    <div class="delete" style="height: 400px; display: inline-block; position: absolute;">
+                        <h1>Delete User</h1>
                         <form action="deleteUser.php" method="GET">
                             <h4>Enter Username:</h4>
                             <input type="text" name="username" required><br><br>
                             <button type="submit" class="btn" style="background-color: #C0B283;">Delete</button>
                         </form>
                     </div>
+
+                    <div class="status form-group" style="height: 400px; display: inline-block; padding-left: 250px; position: absolute">
+                        <h1>Update Status</h1>
+                        <form action="setStatus2.php" method="GET">
+                            <h4>Enter Username:</h4>
+                            <input type="text" name="username" required><br><br>
+                            <select class="form-control" name="status">
+                                <option value="good">Good</option>
+                                <option value="bad">Bad</option>
+                                <option value="banned">Banned</option>
+                            </select><br>
+                            <button type="submit" class="btn" style="background-color: #C0B283;">Update</button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
             
