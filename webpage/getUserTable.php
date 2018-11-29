@@ -21,9 +21,10 @@ if ($result = $buildr->query($query_request)) {
         $username = $row['username'];
         $rank = $row['rank'];
         $status = $row['status'];
+        $uni = $row['university'];
 
         $users[] = array('First Name' => $firstName, 'Last Name' => $lastName, 'Email' => $email, 
-        'Username' => $username, 'Rank' => $rank, 'Status' => $status);
+        'Username' => $username, 'Rank' => $rank, 'Status' => $status, 'University' => $uni);
     }
 
     $response['users'] = $users;

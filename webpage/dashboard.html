@@ -104,6 +104,7 @@
                                 <th>Username</th>
                                 <th>Rank</th>
                                 <th>Status</th>
+                                <th>University</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -114,6 +115,7 @@
                                 <th>Username</th>
                                 <th>Rank</th>
                                 <th>Status</th>
+                                <th>University</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -131,7 +133,8 @@
                                         {data: "Email"},
                                         {data: "Username"},
                                         {data: "Rank"},
-                                        {data: "Status"}
+                                        {data: "Status"},
+                                        {data: "University"}
                                     ]
                                 });
                             });   
@@ -161,6 +164,19 @@
                                 <option value="good">Good</option>
                                 <option value="bad">Bad</option>
                                 <option value="banned">Banned</option>
+                            </select><br>
+                            <button type="submit" class="btn" style="background-color: #C0B283;">Update</button>
+                        </form>
+                    </div>
+
+                    <div class="rank form-group" style="height: 400px; display: inline-block; padding-left: 575px; position: absolute">
+                        <h1>Update Rank</h1>
+                        <form action="setRank2.php" method="GET">
+                            <h4>Enter Username:</h4>
+                            <input type="text" name="username" required><br><br>
+                            <select class="form-control" name="rank">
+                                <option value="administrator">Admin</option>
+                                <option value="default">Default</option>
                             </select><br>
                             <button type="submit" class="btn" style="background-color: #C0B283;">Update</button>
                         </form>
@@ -311,7 +327,6 @@
                         </tfoot>
                     </table>
 
-                    <!-- Make Script for Reading Model Table-->
                     <script>
                         $(document).ready(function() {                   
                             $('#modelTable').DataTable({
@@ -333,8 +348,8 @@
                         });                           
                     </script>
                     <br>
-                    <form action="getReportsTable.php" method="GET">
-                        <button type="submit" class="btn btn-default" id="refresh">Refresh Reports</button>   
+                    <form action="getModelTable.php" method="GET">
+                        <button type="submit" class="btn btn-default" id="refresh">Refresh Models</button>   
                     </form>
                     <br>
                     <hr>

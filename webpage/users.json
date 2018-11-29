@@ -6,7 +6,8 @@
             "Email": "happylemonusa@gmail.com",
             "Username": "happylemon",
             "Rank": "administrator",
-            "Status": "banned"
+            "Status": "banned",
+            "University": "purdue"
         },
         {
             "First Name": "Pekoe",
@@ -14,7 +15,8 @@
             "Email": "pekotbar@gmail.com",
             "Username": "pekoetbar",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "Derek",
@@ -22,7 +24,8 @@
             "Email": "hess33@purdue.edu",
             "Username": "teaspoon",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "Shafer",
@@ -30,7 +33,8 @@
             "Email": "shu17@purdue.edu",
             "Username": "grr",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "Mangkorn",
@@ -38,7 +42,8 @@
             "Email": "mangkorn.yuan98@gmail.com",
             "Username": "mang",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "asdf",
@@ -46,7 +51,8 @@
             "Email": "asd",
             "Username": "asd",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "djdjdjd",
@@ -54,7 +60,8 @@
             "Email": "angkorn.yuan98@gmail.com",
             "Username": "manghgh",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "bob",
@@ -62,7 +69,8 @@
             "Email": "urjfhfjf",
             "Username": "newbobby",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "first",
@@ -70,7 +78,8 @@
             "Email": "email",
             "Username": "user",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "Model",
@@ -78,7 +87,8 @@
             "Email": "User@gmail.com",
             "Username": "UserModel",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
         },
         {
             "First Name": "Barry",
@@ -86,7 +96,17 @@
             "Email": "Manilow@gmail.com",
             "Username": "ManilowBarry",
             "Rank": "default",
-            "Status": "good"
+            "Status": "good",
+            "University": "purdue"
+        },
+        {
+            "First Name": "Shafer",
+            "Last Name": "Hess",
+            "Email": "shafer.hess01@gmail.com",
+            "Username": "hess33",
+            "Rank": "administrator",
+            "Status": "good",
+            "University": "purdue"
         }
     ]
 }
