@@ -7,6 +7,7 @@ html {
     display: inline-block;
     height: 80px; 
 }
+
 .navbar-header {
     display: inline;
 }
@@ -101,4 +102,27 @@ body {
 
 .tab-content {
     display: inline;
+}
+
+.delete {
+    height: 400px;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+}
+
+.status {
+    height: 400px;
+    display: inline-block;
+    position: absolute;
+    padding-left: 250px;
+    z-index: 0;
+}
+
+.rank {
+    height: 400px;
+    display: inline-block;
+    position: absolute;
+    padding-left: 550px;
+    z-index: -1;
 }
