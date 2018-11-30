@@ -21,6 +21,14 @@
 			exit();
 		}
 	}
+	if ($result = $buildr->query("SELECT * FROM friends WHERE user_one = \"$userOne\" AND user_two = \"$userTwo\"")) {
+		if ($result->num_rows > 0) {
+			echo 2;
+			$result->close();
+			$buildr->close();
+			exit();
+		}
+	}
 	if ($buildr->query("INSERT INTO friends (user_one, user_two) VALUES (\"$userOne\", \"$userTwo\")")) {
 		echo 1;
 	} else {
