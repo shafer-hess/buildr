@@ -256,6 +256,7 @@
                     <div class="changelog-editor">
                         <textarea id="editor"></textarea>
                         <br><button class="btn" id="submitChangelog" style="background-color: #C0B283;">Submit Changelog</button>
+                        <button class="btn" id="loadChangelog" style="background-color: #C0B283;">Load Changelog</button>
                         <script>
                                 var md = new SimpleMDE({ 
                                     element: document.getElementById("editor"),
@@ -267,15 +268,20 @@
                                     spellChecker: false
                                 });
 
-                                var file = new XMLHttpRequest();
-                                file.open('GET', '/md.txt', false);
-                                file.onreadystatechange = function() {
-                                    if(file.readyState === 4) {
-                                        var val = file.responseText;
-                                        md.value(val)
+                                $('button').click(function(e) {
+                                    var id = e.target.id;
+                                    if(id === "loadChangelog") {
+                                        var file = new XMLHttpRequest();
+                                        file.open('GET', '/md.txt', false);
+                                        file.onreadystatechange = function() {
+                                            if(file.readyState === 4) {
+                                                var val = file.responseText;
+                                                md.value(val);
+                                            }
+                                        }
+                                        file.send(null)
                                     }
-                                }
-                                file.send(null);
+                                });
 
                                 $('button').click(function(e) {
                                     var id = e.target.id;
